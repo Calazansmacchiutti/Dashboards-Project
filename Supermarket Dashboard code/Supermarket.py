@@ -1,5 +1,3 @@
-%%writefile app.py
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -16,7 +14,7 @@ else:
     st.write('<style>body { background-color: #FFFFFF; color: black; }</style>', unsafe_allow_html=True)
 
 # Lendo e preparando os dados
-df = pd.read_csv("C:/Users/calaz/OneDrive/Documentos/GitHub/Dashboards-Project/Supermarket Dashboard code/supermarket_sales.csv", sep=";", decimal=",")
+df = pd.read_csv("supermarket_sales.csv", sep=";", decimal=",")
 df["Date"] = pd.to_datetime(df["Date"])
 df = df.sort_values("Date")
 df["Month"] = df["Date"].apply(lambda x: str(x.year) + "-" + str(x.month))
